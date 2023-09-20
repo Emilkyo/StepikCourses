@@ -1,6 +1,6 @@
-package com.stepik.course;
+package com.stepik.course.another;
 
-public class Solution {
+public class Search {
     public int search(int[] nums, int target) {
         int A = 0;
         int B = nums.length;

@@ -1,4 +1,4 @@
-package com.stepik.course;
+package com.stepik.course.another;
 
 public class Quiz {
     /*
