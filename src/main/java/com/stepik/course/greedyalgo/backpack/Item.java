@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms.backpack;
+package com.stepik.course.greedyalgo.backpack;
 
 public class Item {
     private final int cost;

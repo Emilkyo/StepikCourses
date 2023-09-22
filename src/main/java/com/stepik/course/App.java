@@ -1,6 +1,6 @@
 package com.stepik.course;
 
-import com.stepik.course.greedyAlgorithms.VariousTerms;
+import com.stepik.course.greedyalgo.VariousTerms;
 
 public class App {
     public static void main(String[] args) {

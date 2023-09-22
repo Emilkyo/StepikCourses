@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms;
+package com.stepik.course.greedyalgo;
 
 //https://stepik.org/lesson/13238/step/11?unit=3424
 

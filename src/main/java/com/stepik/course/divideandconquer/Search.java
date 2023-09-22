@@ -1,4 +1,4 @@
-package com.stepik.course.another;
+package com.stepik.course.divideandconquer;
 
 public class Search {
     public int search(int[] nums, int target) {

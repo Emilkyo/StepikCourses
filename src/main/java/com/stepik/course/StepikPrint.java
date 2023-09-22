@@ -1,90 +1,88 @@
 //import java.util.*;
 //
+//
 //public class Main {
-//    /**
-//     * очередь с приоритетами @Huffman
-//     */
 //    public static void main(String[] args) {
-//        Huffman();
+//        DecodeHuffman decodeHuffman = new DecodeHuffman();
 //    }
 //
-//    public static void Huffman() {
-////      Получаем ввод
-//        String input = "";
-//        try (Scanner scanner = new Scanner(System.in)) {
-//            input = scanner.nextLine().toLowerCase().trim();
-//        }
+//}
+//class DecodeHuffman{
+//    private static Map<Character, String> encoded;
 //
-//        Map<Character, String> encode = buildLetters(input);
+//    private static String decode = "";
+//    private static String encodedString;
 //
-//        String encodedString = encodeString(input, encode);
-//        int uniqueChars = encode.size();
-//        System.out.println(uniqueChars + " " + encodedString.length());
-//        encode.forEach((key, value) ->
-//                System.out.println(key + ": " + value));
-//        System.out.println(encodedString);
+//    private void decodeHuffman() {
+//        getInput();
+//        createTree();
+//        System.out.println(decode);
 //    }
 //
-//    private static Map<Character, String> buildLetters(String input) {
-////      Заносим каждый символ в HashMap
-//        Map<Character, Integer> frequencyMap = new HashMap<>();
-//        for (char c : input.toCharArray()) {
-//            frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
-//        }
-//
-//        // Создание узлов для букв
-//        PriorityQueue<Node> nodes = new PriorityQueue<>();
-//        /*
-//        for (Iterator<Map.Entry<Character, Integer>> iterator = frequencyMap.entrySet().iterator(); iterator.hasNext(); ) {
-//            Map.Entry<Character, Integer> entry = iterator.next();
-//            nodes.add(new Node(entry.getKey(), entry.getValue()));
-//        }
-//
-//        for (Map.Entry<Character, Integer> entry : frequencyMap.entrySet()) {
-//            nodes.add(new Node(entry.getKey(), entry.getValue()));
-//        }
-//        */
-//        frequencyMap.forEach((key, value) -> nodes.add(new Node(key, value)));
+//    public static void createTree() {
+//        PriorityQueue<Node> nodes = new PriorityQueue<>(Collections.reverseOrder());
+//        encoded.forEach((key, value) -> nodes.add(new Node(key, value)));
 //
 //        //Построение дерева Хаффмана
 //        while (nodes.size() > 1) {
 //            Node left = nodes.poll();
 //            Node right = nodes.poll();
-//            Node parent = new Node('\0', left.frequency + right.frequency);
+//            Node parent = new Node('\0', left.letterCode + right.letterCode);
 //            parent.left = left;
 //            parent.right = right;
 //            nodes.add(parent);
 //        }
 //
-//        // Построение кодов для букв
-//        Map<Character, String> codes = new HashMap<>();
-//        buildHuffmanCodesHelper(nodes.peek(), "", codes);
-//        return codes;
+//        decode = decodeString(nodes.peek());
 //    }
 //
-//    private static void buildHuffmanCodesHelper(Node node, String code, Map<Character, String> codes) {
-//        if (node == null) {
-//            return;
+//
+//    public static String decodeString(Node root) {
+//        StringBuilder decodedString = new StringBuilder();
+//        Node currentNode = root;
+//
+//        for (char bit : encodedString.toCharArray()) {
+//            if (bit == '0') {
+//                currentNode = currentNode.left;
+//            } else if (bit == '1') {
+//                currentNode = currentNode.right;
+//            }
+//
+//            if (currentNode.left == null && currentNode.right == null) {
+//                // Достигли листа, добавляем символ к расшифрованной строке
+//                decodedString.append(currentNode.letter);
+//                currentNode = root; // Возвращаемся к корню
+//            }
 //        }
-//        if (node.right == null && node.left == null) {
-//            codes.put(node.letter, code);
-//        }
-//        buildHuffmanCodesHelper(node.right, code + "0", codes);
-//        buildHuffmanCodesHelper(node.left, code + "1", codes);
+//        return decodedString.toString();
 //    }
 //
-//    public static String encodeString(String s, Map<Character, String> codes) {
-//        StringBuilder encodedString = new StringBuilder();
-//        for (char c : s.toCharArray()) {
-//            encodedString.append(codes.get(c));
+//
+//    public static void getInput() {
+//        int k, l;
+//        try (Scanner scanner = new Scanner(System.in)) {
+//            k = scanner.nextInt();
+//            l = scanner.nextInt();
+//            encoded = new HashMap<>();
+//            for (int i = 0; i < k; i++) {
+//                char c = scanner.next().charAt(0);
+//                String code = scanner.nextLine().trim();
+//                encoded.put(c, code);
+//            }
+//            encodedString = scanner.next();
 //        }
-//        return encodedString.toString();
+////        System.out.println("Letters amount: " + k);
+////        System.out.println("Code length: " + l);
+////        System.out.println(encoded);
+////        System.out.println(encodedString);
 //    }
 //}
+//
 //
 //class Node implements Comparable<Node> {
 //    char letter;
 //    int frequency;
+//    String letterCode;
 //    Node left, right;
 //
 //    public Node(char letter, int frequency) {
@@ -92,8 +90,13 @@
 //        this.frequency = frequency;
 //    }
 //
+//    public Node(char letter, String letterCode) {
+//        this.letter = letter;
+//        this.letterCode = letterCode;
+//    }
+//
 //    @Override
 //    public int compareTo(Node other) {
-//        return this.frequency - other.frequency;
+//        return this.letterCode.length() - other.letterCode.length();
 //    }
 //}

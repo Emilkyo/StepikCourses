@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms.backpack;
+package com.stepik.course.greedyalgo.backpack;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;

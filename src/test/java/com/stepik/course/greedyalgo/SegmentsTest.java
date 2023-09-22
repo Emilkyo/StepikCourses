@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms;
+package com.stepik.course.greedyalgo;
 
 import com.stepik.course.fibonacci.GetInput;
 import org.junit.jupiter.api.AfterEach;

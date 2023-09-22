@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms.backpack;
+package com.stepik.course.greedyalgo.backpack;
 
 import java.text.DecimalFormat;
 import java.util.Comparator;

@@ -1,4 +1,4 @@
-package com.stepik.course.greedyAlgorithms.Huffman;
+package com.stepik.course.greedyalgo.Huffman;
 
 import org.jetbrains.annotations.NotNull;
 
