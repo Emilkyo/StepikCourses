@@ -122,3 +122,6 @@ buildNumber.properties
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
 
+/src/main/java/com/stepik/course/another/
+/src/main/java/com/stepik/course/javaBasicCourse/
+/src/main/java/com/stepik/course/jusanExam/
