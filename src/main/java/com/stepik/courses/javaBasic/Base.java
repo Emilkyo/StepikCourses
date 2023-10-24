@@ -1,4 +1,4 @@
-package com.stepik.courses.javaBasicCourse;
+package com.stepik.courses.javaBasic;
 
 public class Base {
     public static void main(String[] args) {

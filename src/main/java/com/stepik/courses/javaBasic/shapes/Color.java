@@ -1,4 +1,4 @@
-package com.stepik.courses.javaBasicCourse.shapes;
+package com.stepik.courses.javaBasic.shapes;
 
 public enum Color {
     BLACK,

@@ -1,4 +1,4 @@
-package com.stepik.courses.javaBasicCourse;
+package com.stepik.courses.javaBasic;
 
 import org.junit.jupiter.api.Test;
 
