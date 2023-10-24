@@ -120,8 +120,6 @@ buildNumber.properties
 # Eclipse Core
 .project
 # JDT-specific (Eclipse Java Development Tools)
-.classpath
 
-/src/main/java/com/stepik/course/another/
-/src/main/java/com/stepik/course/javaBasicCourse/
-/src/main/java/com/stepik/course/jusanExam/
+.classpath!/src/main/java/com/stepik/courses/another/
+/src/main/java/com/stepik/courses/another/
