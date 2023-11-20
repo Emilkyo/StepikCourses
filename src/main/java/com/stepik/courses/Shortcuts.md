@@ -28,7 +28,7 @@
 		<td>Ctrl + Page Up</td>
 	</tr>
 	<tr>
-		<td rowspan="2">Search</td>
+		<td rowspan="3">Search</td>
 		<td>Chat search</td>
 		<td>Ctrl + E</td>
 	</tr>
@@ -36,6 +36,8 @@
 		<td>Messages search per chat</td>
 		<td>Ctrl + F</td>
 	</tr>
+    <td>gg</td>
+    <td>gg</td>
 	<tr>
 		<td rowspan="13">Selected Text <br>in typing area</td>
 		<td>Undo</td>
